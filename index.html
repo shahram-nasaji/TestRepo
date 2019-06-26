@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="jQuery-3.4.1.js"></script>
+    <style>
+        .info {
+            background-color: red;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+
+    <ul>
+		<li>1</li>
+		<li>2</li>
+		<li class="selected">3</li>
+		<li>4</li>
+	</ul>
+    <script>
+        $(document).ready(function () {
+		
+			$("li").parent().addClass("info");
+			
+        })
+    </script>
+</body>
+
+</html>
