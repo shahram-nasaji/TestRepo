@@ -13,16 +13,18 @@
 </head>
 <body>
 
-    <ul>
+    <ul class="xxx">
 		<li>1</li>
 		<li>2</li>
 		<li class="selected">3</li>
 		<li>4</li>
+        <li>5</li>
+        <li class="final">6</li>
 	</ul>
     <script>
         $(document).ready(function () {
 		
-			$("li").parent().addClass("info");
+            $("li.selected").prevUntil(".xxx").css({ "color": "red" });
 			
         })
     </script>

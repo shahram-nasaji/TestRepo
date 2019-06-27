@@ -1,0 +1,25 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 7dfa1b9..eb6a8cb 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -13,16 +13,18 @@[m
+ </head>[m
+ <body>[m
+ [m
+[31m-    <ul>[m
+[32m+[m[32m    <ul class="xxx">[m
+ 		<li>1</li>[m
+ 		<li>2</li>[m
+ 		<li class="selected">3</li>[m
+ 		<li>4</li>[m
+[32m+[m[32m        <li>5</li>[m
+[32m+[m[32m        <li class="final">6</li>[m
+ 	</ul>[m
+     <script>[m
+         $(document).ready(function () {[m
+ 		[m
+[31m-			$("li").parent().addClass("info");[m
+[32m+[m[32m            $("li.selected").prevUntil(".xxx").css({ "color": "red" });[m
+ 			[m
+         })[m
+     </script>[m
