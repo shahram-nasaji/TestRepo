@@ -14,35 +14,43 @@
 </head>
 <body>
 
-    <div>
-        <p class="error"></p>
-    </div>
-    <br /><br /><br />
-    <div>
-        <p class="error"></p>
-    </div>
+    <div style="width: 400px;">
+        <div>
+            Number1: <input type="text" id="num1" /><br /><br />
+            Number2: <input type="text" id="num2" /><br /><br />
 
-    <p>Test</p>
+            <input type="button" value="Calculate" id="calc" />
+            <br />
+
+            <p class="result"></p>
+        </div>
+    </div>
 
     <script>
 
         $(document).ready(function () {
 
-            try {
+            $("input[type=text]").focus(function () {
 
-                var x = 2;
-                var y = 0;
+                if ($(this).val() == "")
+                    $(this).val("0");
+                else
+                    $(this).select();
 
-                throw "<h3>Can't divide by zero.</h3>";
+            });
 
-            } catch (exception) {
+            $("#calc").click(function () {
 
-                $("div p.error").log(exception, {
-                    "font-family": "Arial",
-                    "color": "blue"
+                var n1 = parseInt($("#num1").val());
+                var n2 = parseInt($("#num2").val());
+
+                $("div p.result").calc(n1, n2, {
+                    operation: "*",
+                    color: "blue",
+                    title: "نتیجه محاسبه برابر می باشد با : ",
+                    direction: "rtl"
                 });
-
-            }
+            });
 
         })
 
